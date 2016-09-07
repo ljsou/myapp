@@ -34,9 +34,9 @@ Template.suma.events({
   },
   'submit .set-interval'(event, instance){
 		event.preventDefault();
-		instance.interval.set(event.target.text.value);
+		instance.interval.set(event.target.inter.value);
 		console.log("interval: ", instance.interval.get());
-		event.target.text.value = "";
+		event.target.inter.value = "";
   }
 
 });
