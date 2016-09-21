@@ -1,8 +1,10 @@
-Template.UserForm.helpers({
+Meteor.subscribe('users_form');
+
+Template.User.helpers({
 
 });
 
-Template.UserForm.events({
+Template.User.events({
     'submit': function (event) {
         event.preventDefault();
         var first_name = event.target.first_name.value;
@@ -16,6 +18,9 @@ Template.UserForm.events({
             password: password,
             email: email
         }
+
+        //UsersForm.insert(user);
+        Meteor.call('UsersForm.insert', user);
 
         event.target.first_name.value = "";
         event.target.last_name.value = "";
