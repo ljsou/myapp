@@ -1,0 +1,39 @@
+<Template name="Users">
+    <h4>Users</h4>
+    <div class="users-list">
+        <!--<ul>-->
+            <!--{{#each users}}-->
+            <!--<li class="user-name">{{first_name}} {{last_name}} ({{email}})</li>-->
+            <!--{{/each}}-->
+        <!--</ul>-->
+        <div class="card">
+            <div class="card-content">
+                <table class="highlight responsive-table">
+                    <thead>
+                    <tr>
+                        <th data-field="id">First name</th>
+                        <th data-field="name">Last name</th>
+                        <th data-field="price">Email</th>
+                        <th> </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {{#each users}}
+                        <tr>
+                            <td>{{first_name}}</td>
+                            <td>{{last_name}}</td>
+                            <td>{{email}}</td>
+                            <td>
+                                <a href="/users/{{_id}}" class="btn-floating red right-align">
+                                    <i class="large material-icons">mode_edit</i>
+                                </a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</Template>

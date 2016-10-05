@@ -1,4 +1,9 @@
-Meteor.subscribe('users_form');
+Template.User.onCreated(function () {
+    var self = this;
+    self.autorun(function () {
+        self.subscribe('users_form');
+    });
+});
 
 Template.User.helpers({
 
