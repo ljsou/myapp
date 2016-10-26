@@ -32,5 +32,6 @@ Template.User.events({
         event.target.password.value = "";
         event.target.email.value = "";
         console.log("User: ", user);
+        FlowRouter.go('users');
     }
 });

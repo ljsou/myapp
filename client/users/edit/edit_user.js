@@ -13,7 +13,7 @@ Template.EditUser.helpers({
 });
 
 Template.EditUser.events({
-    'submit': function (event) {
+    'click .send': function (event) {
         event.preventDefault();
         var first_name = event.target.first_name.value;
         var last_name = event.target.last_name.value;
@@ -38,6 +38,12 @@ Template.EditUser.events({
         event.target.last_name.value = "";
         //event.target.password.value = "";
         event.target.email.value = "";
+        FlowRouter.go('users');
+    },
+
+    'click .delete': function(event){
+        event.preventDefault();
+        Meteor.call('UsersForm.remove', {_id: FlowRouter.getParam('id')});
         FlowRouter.go('users');
     }
 });

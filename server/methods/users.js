@@ -5,7 +5,7 @@ Meteor.methods({
     'UsersForm.update': function (params) {
         return UsersForm.update({_id: params.id}, params.params);
     },
-    'Fields.remove': function (params) {
+    'UsersForm.remove': function (params) {
         UsersForm.remove(params);
     },
 });
