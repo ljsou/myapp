@@ -5,6 +5,11 @@ Template.EditUser.onCreated(function () {
     });
 });
 
+Template.EditUser.onRendered(function () {
+  $('.modal-trigger').leanModal();
+});
+
+
 Template.EditUser.helpers({
     user: function () {
         var id = FlowRouter.getParam('id');
@@ -13,13 +18,13 @@ Template.EditUser.helpers({
 });
 
 Template.EditUser.events({
-    'click .send': function (event) {
+    'click .update': function (event) {
         event.preventDefault();
-        var first_name = event.target.first_name.value;
-        var last_name = event.target.last_name.value;
+        var first_name = $('#first_name').val();
+        var last_name = $('#last_name').val();
         //var password = event.target.password.value;
-        var email = event.target.email.value;
-
+        var email = $('#email').val();
+        console.log("update", first_name);
         var user_updated = {
             id: FlowRouter.getParam('id'),
             params: {
@@ -33,15 +38,10 @@ Template.EditUser.events({
 
         //UsersForm.insert(user);
         Meteor.call('UsersForm.update', user_updated);
-
-        event.target.first_name.value = "";
-        event.target.last_name.value = "";
-        //event.target.password.value = "";
-        event.target.email.value = "";
         FlowRouter.go('users');
     },
 
-    'click .delete': function(event){
+    'click .yes': function(event){
         event.preventDefault();
         Meteor.call('UsersForm.remove', {_id: FlowRouter.getParam('id')});
         FlowRouter.go('users');

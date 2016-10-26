@@ -25,9 +25,21 @@
                 </div>
             </div>
             <div class="row right-align">
-                <button class="btn btn-primary send">Send</button>
-                <button class="btn red delete">Delete</button>
+                <button type="submit" class="btn btn-primary update">Update</button>
+                 <button data-target="modal1" class="btn modal-trigger red">Delete</button>
+
             </div>
         </form>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Delete {{user.first_name}} {{user.last_name}}</h4>
+          <p>Are you sure?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</button>
+            <button type="submit" class="modal-action modal-close btn btn-primary yes">Yes</button>
+        </div>
     </div>
 </template>

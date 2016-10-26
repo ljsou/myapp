@@ -7,11 +7,14 @@ Template.Users.onCreated(function () {
 
 Template.Users.helpers({
     users:function () {
-        return UsersForm.find().fetch();
+        return UsersForm.find({},{sort:{createdAt: -1}}).fetch();
     }
 
 });
 
 Template.Users.events({
-
+	'click .add-user': function(event){
+		console.log("add user");
+		FlowRouter.go('user');
+	}
 });

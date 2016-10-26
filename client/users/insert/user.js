@@ -21,7 +21,8 @@ Template.User.events({
             first_name: first_name,
             last_name: last_name,
             password: password,
-            email: email
+            email: email,
+            createdAt: new Date()
         }
 
         //UsersForm.insert(user);

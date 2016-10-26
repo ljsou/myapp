@@ -1,8 +1,49 @@
 <template name="MainLayout">
 	<header>
 		<!--<h1>Title main</h1>-->
+		{{> navbar}}
 	</header>
 	<main class="container">
 		{{> Template.dynamic template=main}}
 	</main>
+</template>
+
+<template name="navbar">
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#!">one</a></li>
+	  <li><a href="#!">two</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#!">three</a></li>
+	</ul>
+	<nav>
+	  <div class="nav-wrapper">
+	    <!-- <a href="#!" class="brand-logo">Creditos libres 3</a> -->
+	    <a href="#" data-activates="slide-out" class="button-collapse" style="display: block; padding-left: 20px;"><i class="large material-icons">menu</i></a>
+	    <ul class="right hide-on-med-and-down">
+	      <li>
+	      	
+	      </li>
+	      <li>
+	      	<a href="#">Components</a>
+	      </li>
+	      <!-- Dropdown Trigger -->
+	      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<ul id="slide-out" class="side-nav">
+	    <li><div class="userView">
+	      <img class="background" src="images/office.jpg">
+	      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+	      <a href="#!name"><span class="white-text name">John Doe</span></a>
+	      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+	    </div></li>
+	    <li><a href="/user"><i class="material-icons">perm_identity</i>New user</a></li>
+	    <li><a href="/users"><i class="material-icons">supervisor_account</i>List users</a></li>
+	    <li><div class="divider"></div></li>
+	    <li><a class="subheader">Subheader</a></li>
+	    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+	</ul>
 </template>
